@@ -1,3 +1,9 @@
+:root {
+  --illuminating: #F5DF4D;
+  --ultimate-gray: #939597;
+  --classic-blue: #0F4C81;
+}
+
 body {
     background: #ECEFF1;
     color: rgba(0, 0, 0, 0.87);

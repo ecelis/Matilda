@@ -2,15 +2,17 @@
   <v-app>
     <AppBar />
     <v-main>
-      <p id="currentRoom"></p>
-      <vue-webrtc ref="webrtc"
-        roomId="public-room"
-        stunServer="stun:stun1.l.google.com:19302"
-        width="100%"
-        v-on:joined-room="logEvent"
-        v-on:left-room="logEvent"
-        v-on:opened-room="logEvent"
-        @error="onError" />
+      <v-row>
+        <h3 id="currentRoom">{{roomId}}</h3>
+        <vue-webrtc ref="webrtc"
+          :roomId="roomId"
+          stunServer="stun:stun1.l.google.com:19302"
+          width="100%"
+          v-on:joined-room="logEvent"
+          v-on:left-room="logEvent"
+          v-on:opened-room="logEvent"
+          @error="onError" />
+      </v-row>
       <v-row align="center" justify="space-around">
         <v-btn elevation="2" color="primary"
           @click="onJoin">Join room</v-btn>
@@ -38,7 +40,6 @@ export default {
   components: {
     AppBar,
   },
-
   data() {
     return {
       img: null,
